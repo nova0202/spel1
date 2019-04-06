@@ -8,9 +8,6 @@ startScene.update = function(){
   this.add.text(16, 16, 'Tryck för att starta', { fontSize: '32px', fill: '#FFF' });
   if (this.input.activePointer.isDown) {
   
-      if (!this.scale.isFullscreen) {
-          this.scale.startFullscreen();
-      }
       this.scene.start(gameScene);
   
   }
@@ -189,7 +186,12 @@ let config = {
   type: Phaser.AUTO,
   width: 640,
   height: 360,
-  scene: [startScene,gameScene, winScene, gameOverScene]
+  scene: [startScene,gameScene, winScene, gameOverScene],
+	scale: {
+    mode: Phaser.Scale.FIT,
+    width: 800,
+    height: 600
+}
 };
 
 // create the game, and pass it the configuration
