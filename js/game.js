@@ -186,12 +186,12 @@ let config = {
   type: Phaser.AUTO,
   width: 640,
   height: 360,
-  scene: [startScene,gameScene, winScene, gameOverScene],
+  /*scene: [startScene,gameScene, winScene, gameOverScene],
 	scale: {
     mode: Phaser.Scale.FIT,
     width: 800,
     height: 600
-}
+}*/
 };
 
 // create the game, and pass it the configuration
