@@ -2,12 +2,22 @@
 let gameScene = new Phaser.Scene('Game');
 let winScene = new Phaser.Scene('Win');
 let gameOverScene = new Phaser.Scene('Game over');
+let startScene = new Phaser.Scene('Start');
+
+startScene.update = function(){
+  this.add.text(16, 16, 'Tryck för att starta', { fontSize: '32px', fill: '#FFF' });
+  if (this.input.activePointer.isDown) {
+  
+      this.scene.start(gameScene);
+  
+  }
+}
 
 winScene.init = function(){
 		console.log("winScene");
 	
-	  this.time.delayedCall(5000, function() {
-	  this.scene.start(gameScene);
+	  this.time.delayedCall(3000, function() {
+	  this.scene.start(startScene);
   }, [], this);
 
 
@@ -164,7 +174,7 @@ gameScene.gameOver = function() {
 
   // restart game
   this.time.delayedCall(500, function() {
-	  this.scene.start(gameOverScene);
+	  this.scene.start(startScene);
 	  
   }, [], this);
 };
@@ -176,7 +186,7 @@ let config = {
   type: Phaser.AUTO,
   width: 640,
   height: 360,
-  scene: [gameScene, winScene, gameOverScene]
+  scene: [startScene,gameScene, winScene, gameOverScene]
 };
 
 // create the game, and pass it the configuration
