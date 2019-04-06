@@ -13,7 +13,7 @@ winScene.init = function(){
 
 }
 winScene.update = function(){
-	this.add.text(16, 16, 'Du vann', { fontSize: '32px', fill: '#FFF' });
+	this.add.text(16, 16, 'Yay! Du vann!', { fontSize: '32px', fill: '#FFF' });
 }
 gameOverScene.init = function(){
 	
