@@ -8,6 +8,9 @@ startScene.update = function(){
   this.add.text(16, 16, 'Tryck för att starta', { fontSize: '32px', fill: '#FFF' });
   if (this.input.activePointer.isDown) {
   
+      if (!this.scale.isFullscreen) {
+          this.scale.startFullscreen();
+      }
       this.scene.start(gameScene);
   
   }
